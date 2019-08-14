@@ -5,6 +5,7 @@ import fenlei from './views/fenlei.vue'
 import pinggou from './views/pinggou.vue'
 import gouwu from './views/gouwu.vue'
 import denglu from './views/denglu.vue'
+import product from './views/product.vue'
 
 
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/denglu',
       name: 'denglu',
       component: denglu
+    },
+    {
+      path: '/product',
+      name: 'product',
+      component: product
     }
   ]
 })

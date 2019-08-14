@@ -2,8 +2,8 @@
   <ul class="nav-bar">
     <li v-for="(item,index) in navlist" :key="index">
       <router-link :to="item.path">
-        <img :src="item.url" />
-        <p>{{item.text}}</p>
+        <img :src="(item.path==current)?item.active:item.url" />
+        <p v-text="item.text" :class="(item.path==current)?'current':''"></p>
       </router-link>
     </li>
   </ul>
@@ -32,7 +32,12 @@
         text-align: center;
         margin-top: 0rem;
         padding-top: 0rem;
+       
+
     }
+    .current{
+          color: red;
+        }
   }
 }
 </style>
@@ -41,6 +46,7 @@ import "../assets/font_1348016_mhcybahh23/iconfont.css";
 export default {
   data: function() {
     return {
+      current:"/",
       navlist: [
         {
           url: require("../assets/images/首页.png"),
@@ -74,6 +80,9 @@ export default {
         }
       ]
     };
+  },
+  mounted:function(){
+    this.current = this.$route.path
   }
   // props:{
   //     flag:{
