@@ -4,6 +4,7 @@
     <homeswiper></homeswiper>
     <navbar></navbar>
     <iconBar></iconBar>
+    <miaosha></miaosha>
     <div class="biaoti">
       <img src="../assets/images/xq-biaoti.png" />
     </div>
@@ -19,6 +20,7 @@ import navbar from "@/components/NavBar.vue"
 import homeswiper from "@/components/homeSwiper.vue"
 import iconBar from "@/components/iconBar.vue"
 import xqBar from "@/components/xqBar.vue"
+import miaosha from "@/components/miaosha.vue"
 
 
 export default {
@@ -29,6 +31,7 @@ export default {
     homeswiper,
     iconBar,
     xqBar,
+    miaosha,
   }
 }
 </script>

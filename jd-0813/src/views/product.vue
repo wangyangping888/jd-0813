@@ -1,13 +1,14 @@
 <template>
-    <div>商品详情:
-        <div v-text="id"></div>
-        <div v-text="title"></div>
-    </div>
+    <proTitle></proTitle>
 
 </template>
 <script>
+import proTitle from "@/components/proTitle.vue"
 export default {
     name:'product',
+    components:{
+        proTitle,
+    },
     data:function(){
         return{
             id:null,
