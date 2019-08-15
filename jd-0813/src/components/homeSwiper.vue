@@ -1,12 +1,12 @@
 <template>
-  <div class="swiper-container">
+  <div class="swiper-container" id="swiper3">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(item,index) in imgs " :key="index">
         <img :src="item" />
       </div>
     </div>
     <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination" id="swiper4"></div>
   </div>
 </template>
 <style lang="less">
@@ -34,12 +34,12 @@ export default {
     };
   },
   mounted: function() {
-    this.swiper = new swiper(".swiper-container", {
+    this.swiper = new swiper("#swiper3", {
       loop: true, // 循环模式选项
       autoplay: true,
       // 如果需要分页器
       pagination: {
-        el: ".swiper-pagination",
+        el: "#swiper4",
         clickable: true
       }
     });

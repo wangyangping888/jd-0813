@@ -12,7 +12,7 @@
         </div>
         <div class="swiper-slide">
           <ul>
-            <li v-for="(item,index) in icon" :key="index">
+            <li v-for="(item,index) in icon2" :key="index">
               <img :src="(item.url)" />
               <p v-text="item.title"></p>
             </li>
@@ -115,14 +115,53 @@ export default {
           url: require("../assets/icons/10.png"),
           title: "PLUS会员"
         },
+      ],
+      icon2: [
+        {
+          url: require("../assets/images/icon11.png"),
+          title: "京东超市"
+        },
+        {
+          url: require("../assets/images/icon12.png"),
+          title: "数码电器"
+        },
+        {
+          url: require("../assets/images/icon13.png"),
+          title: "京东服饰"
+        },
+        {
+          url: require("../assets/images/icon14.png"),
+          title: "京东生鲜"
+        },
+        {
+          url: require("../assets/images/icon15.png"),
+          title: "京东到家"
+        },
+        {
+          url: require("../assets/images/icon16.png"),
+          title: "充值缴费"
+        },
+        {
+          url: require("../assets/images/icon17.png"),
+          title: "9.9元拼"
+        },
+        {
+          url: require("../assets/images/icon18.png"),
+          title: "领券"
+        },
+        {
+          url: require("../assets/images/icon19.png"),
+          title: "赚钱"
+        },
+        {
+          url: require("../assets/images/icon20.png"),
+          title: "PLUS会员"
+        },
       ]
     };
   },
   mounted: function() {
     this.swiper = new swiper("#swiper1", {
-      slidesPerView: 0,
-      slidesPerColumn: 0,
-      spaceBetween: 0,
       pagination: {
         el: "#swiper2",
         clickable: true,
