@@ -10,7 +10,8 @@
             <p>￥1980</p>
             <p class="selected">
               已选
-              <span v-text="color[colorindex]"></span>
+            <span v-text="color[colorindex]"  ></span>
+            <span> , {{number}}个</span>
             </p>
           </div>
         </div>
@@ -28,10 +29,14 @@
         <div class="number">
           <p>数量</p>
           <div class="shuliang">
-            <span class="jian"  @click="jian">-</span>
-            <input type="text" value="1" />
-            <span class="jia" @click="jia">+</span>
+            <span class="jian"  @click="number<=1?1:--number">-</span>
+            <input type="text" v-model="number" />
+            <span class="jia" @click="number++">+</span>
           </div>
+        </div>
+        <div class="goumai-all">
+          <div class="jiaru">加入购物车</div>
+          <div class="goumai">立即购买</div>
         </div>
       </div>
     </transition>
@@ -92,9 +97,12 @@
         margin-left: 0.3rem;
         li {
           span {
+            display: block;
             float: left;
             background-color: #f7f7f7;
-            width: 1rem;
+            min-width: 1rem;
+            max-width:3rem;
+            padding: 0.1rem;
             text-align: center;
             margin-right: 0.1rem;
             margin-top: 0.2rem;
@@ -152,6 +160,31 @@
         }
       }
     }
+    .goumai-all{
+      width: 100%;
+      // height: 5rem;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      .jiaru{
+        background-color: #ffbc00;
+        float: left;
+        width: 50%;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        box-sizing: border-box;
+      }
+      .goumai{
+        background-color: #f10000;
+        float: left;
+        width: 50%;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        box-sizing: border-box;
+      }
+    }
   }
  .masks {
     position: fixed;
@@ -185,8 +218,9 @@ export default {
   data() {
     return {
       aaa: true,
-      color: ["红色", "黄色", "绿色", "白色"],
-      colorindex: 0
+      color: ["金色音乐款", "棕色音乐款"],
+      colorindex: 0,
+      number:1,
     };
   },
   props: {
@@ -206,7 +240,7 @@ export default {
   },
   methods:{
       jia:function(){
-
+          
       },
       jian:function(){
           
