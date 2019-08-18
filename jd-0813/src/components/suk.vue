@@ -193,7 +193,7 @@
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -9;
+    z-index: 99;
   }
 }
 .fade-enter {
@@ -239,12 +239,7 @@ export default {
     this.aaa = this.value;
   },
   methods:{
-      jia:function(){
-          
-      },
-      jian:function(){
-          
-      }
+      
   }
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="title">
     <div class="top">
       <div class="back">
-        <img src="../assets/images/back.png" @click="$router.go(-1)" />
+        <img src="../assets/images/back.png" @click="$router.go(-1)"/>
       </div>
       <div class="center">
         <slot></slot>
@@ -33,6 +33,9 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
     .back {
       margin: 0;
       margin-top: 0.3rem;
@@ -57,6 +60,7 @@
         width: 20px;
       }
     }
+   
   }
   .san{
         background-color: #000;
