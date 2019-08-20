@@ -57,13 +57,25 @@ export default {
         require("../assets/images/product5.jpg"),
         require("../assets/images/product6.jpg"),
         require("../assets/images/product7.jpg"),
-        require("../assets/images/product8.jpg")
+        require("../assets/images/product8.jpg"),
+      ],
+      img2:[
+        require("../assets/images/pro-bag.png"),
+        require("../assets/images/pro-bag2.png"),
+        require("../assets/images/pro-bag3.png"),
+        require("../assets/images/pro-bag4.png"),
+        require("../assets/images/pro-bag5.png"),
       ],
       flag: false,
       hua: false
     };
   },
   mounted: function() {
+    var pid = this.$route.query.pid;
+    console.log(pid);
+    if(pid == 2) {
+      this.imgs = this.img2;
+    }
     this.swiper = new swiper("#swiper3", {
       loop: true, // 循环模式选项
       autoplay: true,

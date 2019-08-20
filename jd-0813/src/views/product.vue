@@ -11,7 +11,7 @@
       </ul>
     </proTitle>
     <productSwiper></productSwiper>
-    <button>购物</button>
+    <button @click="isshow=true">购物</button>
     <div class="shangpin" style="height: 500px; background-color:red;">
       <p ref="product">商品</p>
     </div>
@@ -115,7 +115,8 @@ export default {
 };
 </script>
 <style lang="less" >
-ul.toptitle{
+.product{
+  ul.toptitle{
     overflow: hidden;
   li {
     margin-left: 0.3rem;
@@ -140,4 +141,6 @@ ul.toptitle{
     }
   }
 }
+}
+
 </style>

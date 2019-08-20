@@ -6,6 +6,7 @@ import pinggou from './views/pinggou.vue'
 import gouwu from './views/gouwu.vue'
 import denglu from './views/denglu.vue'
 import product from './views/product.vue'
+import login from './views/login.vue'
 
 
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/product',
       name: 'product',
       component: product
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     }
   ]
 })

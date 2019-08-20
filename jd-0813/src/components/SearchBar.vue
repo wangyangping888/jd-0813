@@ -6,7 +6,7 @@
       <span class="iconfont">&#xe62a;</span>
       <input type="text" placeholder="美孚一号" />
     </div>
-    <div class="login">登录</div>
+    <div class="login" @click="gotologin">登录</div>
   </div>
 </template>
 
@@ -84,6 +84,11 @@ export default {
                 this.isScroll = false;
             }
         }
+    },
+    methods:{
+      gotologin:function(){
+        this.$router.push("/login")
+      }
     },
 };
 </script>

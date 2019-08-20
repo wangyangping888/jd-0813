@@ -5,10 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    login:false,
   },
   mutations: {
-
+    setlogin(state,status){
+      sessionStorage.setItem('login',status);
+      state.login = status;
+    }
   },
   actions: {
 
