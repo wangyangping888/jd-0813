@@ -1,7 +1,7 @@
 <template>
   <div class="bottombar">
     <div class="right">
-      <div class="jiaru" @click="hidden">加入购物车</div>
+      <div class="jiaru" @click="dianji">加入购物车</div>
       <div class="liji">立即购买</div>
     </div>
     <div class="left">
@@ -31,15 +31,30 @@ export default {
           url: require("../assets/images/che.png"),
           title: "购物车"
         }
-      ]
+      ],
+      pan:false,
     };
   },
-  methods: {
-    hidden: function() {
-      this.isshow = true;
-      console.log(this.isshow);
+  props:{
+    value:{
+      type:Boolean,
+      default:false,
     }
-  }
+  },
+  watch:{
+    value:function(val){
+      
+    }
+  },
+  created:function(){
+    
+    
+  },
+  methods: {
+    dianji: function() {
+      this.$emit('isLogFn','log');
+    },
+  },
 };
 </script>
 <style lang="less">

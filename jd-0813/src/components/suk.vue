@@ -1,7 +1,7 @@
 <template>
   <div class="sukbar">
     <transition name="fade">
-      <div class="suk" v-show="aaa">
+      <div class="suk" v-show="isLogin">
         <div class="box">
           <div class="amy">
             <img src="../assets/images/amy.png" />
@@ -40,7 +40,7 @@
         </div>
       </div>
     </transition>
-    <div class="masks" v-show="aaa" @click="$emit('input',false)"></div>
+    <div class="masks" v-show="pan" @click="$emit('input',false)"></div>
   </div>
 </template>
 <style lang="less">
@@ -217,26 +217,37 @@
 export default {
   data() {
     return {
-      aaa: true,
+      pan: true,
       color: ["金色音乐款", "棕色音乐款"],
       colorindex: 0,
       number:1,
+      flag:false,
     };
   },
+  props: ['isLog'],
   props: {
     value: {
       type: Boolean,
       default: false
     }
   },
+  computed: {   
+    isLogin () {
+      if(this.isLog == 'true'){
+        return true
+      } else {
+        return false
+      }
+    }
+  },
   watch: {
     value: function(val) {
-      this.aaa = this.value;
+      this.pan = this.value;
       console.log(this.value);
     }
   },
   created: function() {
-    this.aaa = this.value;
+    this.pan = this.value;
   },
   methods:{
       

@@ -24,8 +24,8 @@
     <div class="tuijian" style="height: 500px;background-color:pink;">
       <p ref="tuijian">推荐</p>
     </div>
-    <suk v-model="isshow"></suk>
-    <bottomCart></bottomCart>
+    <suk :isLog = "login"></suk>
+    <bottomCart @isLogFn = "lisLogFn"></bottomCart>
   </div>
 </template>
 <script>
@@ -39,7 +39,8 @@ export default {
     proTitle,
     suk,
     productSwiper,
-    bottomCart
+    bottomCart,
+    login: 'false',
   },
   data: function() {
     return {
@@ -76,13 +77,20 @@ export default {
       });
     };
   },
+  watch:{
+
+  },
   methods: {
    
     onchange(ind) {
       this.navIndex = ind;
       document.documentElement.scrollTop = this.scrollt[ind] - 50;
     },
-
+    lisLogFn (data) {
+      if (data == 'log') {
+        this.login = true
+      }
+    },
     scrollTop(val) {
       // 当前值
       let scrollTop =
