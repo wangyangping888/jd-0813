@@ -1,8 +1,6 @@
 <template>
   <div class="fenlei">
-    <proTitle>
-      <span>商品分类</span>
-    </proTitle>
+    <proTitle>商品分类</proTitle>
     <div class="cate">
       <aside
         ref="aside"
@@ -23,7 +21,13 @@
         </ul>
       </aside>
       <div class="right">
-        <p class="text"></p>
+        <p class="text" v-text="txt1"></p>
+		<ul>
+			<li v-for="(item,index) in img" :key="index" ref = "flitem">
+				<img :src="item.url" />
+				<p v-text="item.title"></p>
+			</li>
+		</ul>
       </div>
     </div>
     <navBar></navBar>
@@ -42,6 +46,9 @@
     box-sizing: border-box;
     color: black;
     background-color: #fff;
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:space-between;
     aside {
       width: 2rem;
       background-color: #f8f8f8;
@@ -65,13 +72,38 @@
         }
       }
     }
+	.right {
+	  display: inline-block;
+	  background-color: white;
+	  width: 73%;
+	  height: 100%;
+	  
+	  p.text{
+		  text-align: left;
+		  margin-top: 20px;
+		  margin-left: 10px;
+		  font-weight: bold;
+	  }
+	  ul{
+		  width: 100%;
+		  display:flex;
+		  justify-content:space-between;
+		  flex-wrap:wrap;
+		  li{
+			  text-align:left;
+			  width:28%;
+			  img{
+				  width: 1.4rem;
+				  height: 1.4rem;
+			  }
+			  p{
+				text-align: center;  
+			  }
+		  }
+	  }
+	}
   }
-  .right {
-    display: inline-block;
-    background-color: blue;
-    width: 73%;
-    height: 100%;
-  }
+  
   .transition {
     transition: top 0.3s linear;
   }
@@ -116,11 +148,29 @@ export default {
         "医药保健",
         "宠物生活"
       ],
+	  img:[{
+		  url:require("../assets/images/phone.png"),
+		  title:"手机",
+	  },
+	  {
+	  		  url:require("../assets/images/erji.png"),
+	  		  title:"耳机",
+	  },
+	  {
+	  		  url:require("../assets/images/huawei.png"),
+	  		  title:"华为",
+	  },
+	  {
+	  		  url:require("../assets/images/dianfan.png"),
+	  		  title:"电饭煲",
+	  },
+	  ],
       navIndex: 0,
       startY: 0,
       offsetTop: 0,
       limitTop: 0,
       tmp: 0,
+	  txt1:'热门推荐',
       transition: false
     };
   },
@@ -162,10 +212,14 @@ export default {
 
       // 越界处理
       this.tmp = this.tmp > 0 ? 0 : this.tmp;
-      this.tmp =
-        this.tmp < this.limitTop + 150 ? this.limitTop + 150 : this.tmp;
+      this.tmp =this.tmp < this.limitTop + 150 ? this.limitTop + 150 : this.tmp;
       this.offsetTop = this.tmp;
       this.transition = true;
+	  this.txt1 = this.lei[index];
+	  // var image = this.img;
+	  if(index %2  == 0) {
+		  this.img.reverse();
+	  }
     }
   },
   mounted: function() {

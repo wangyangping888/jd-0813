@@ -32,7 +32,7 @@ export default {
           title: "购物车"
         }
       ],
-      pan:false,
+	  dian:false,
     };
   },
   props:{
@@ -42,17 +42,18 @@ export default {
     }
   },
   watch:{
-    value:function(val){
-      
-    }
+	  value:function(value){
+		  this.dian = value
+	  }
   },
   created:function(){
-    
+    this.dian = this.value
     
   },
   methods: {
     dianji: function() {
-      this.$emit('isLogFn','log');
+		this.dian = !this.dian;
+      this.$emit('input',this.dian);
     },
   },
 };

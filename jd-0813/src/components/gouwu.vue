@@ -53,10 +53,11 @@ export default {
 }
 </script>
 <style lang="less">
-    .gouwu {
+.gouwu {
+	
   .cart {
     background-color: #fff;
-    margin-top: 1.2rem;
+	padding-top:1.2rem;
     overflow: hidden;
     .top {
       border-top: 1px solid #f1f1f1;

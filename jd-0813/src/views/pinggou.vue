@@ -1,6 +1,9 @@
 <template>
   <div class="denglu">
-    拼购
+    <proTitle>京东拼购</proTitle>
+	<div class="pannel">
+		<div class="sousuo"></div>
+	</div>
     <navBar></navBar>
   </div>
 </template>
@@ -40,6 +43,7 @@
 <script>
 import "../assets/font_1348016_mhcybahh23/iconfont.css";
 import navBar from "@/components/NavBar.vue";
+import proTitle from "@/components/proTitle.vue";
 export default {
   data: function() {
     return {
@@ -52,6 +56,7 @@ export default {
   },
   components:{
     navBar,
+	proTitle,
   }
 };
 </script>

@@ -11,7 +11,6 @@
       </ul>
     </proTitle>
     <productSwiper></productSwiper>
-    <button @click="isshow=true">购物</button>
     <div class="shangpin" style="height: 500px; background-color:red;">
       <p ref="product">商品</p>
     </div>
@@ -24,8 +23,8 @@
     <div class="tuijian" style="height: 500px;background-color:pink;">
       <p ref="tuijian">推荐</p>
     </div>
-    <suk :isLog = "login"></suk>
-    <bottomCart @isLogFn = "lisLogFn"></bottomCart>
+    <suk v-model="dian"></suk>
+    <bottomCart v-model="dian"></bottomCart>
   </div>
 </template>
 <script>
@@ -40,12 +39,12 @@ export default {
     suk,
     productSwiper,
     bottomCart,
-    login: 'false',
   },
   data: function() {
     return {
       id: null,
       title: "",
+	  dian:false,
       isshow: false,
       navIndex: 0,
       scrollt: [],

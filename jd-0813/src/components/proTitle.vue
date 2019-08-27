@@ -2,7 +2,7 @@
   <div class="title">
     <div class="top">
       <div class="back">
-        <img src="../assets/images/back.png" @click="$router.go(-1)"/>
+        <img src="../assets/images/back.png" @click="back"/>
       </div>
       <div class="center">
         <slot></slot>
@@ -27,7 +27,7 @@
 </template>
 <style lang="less">
 .title {
- position: relative;
+	
   .top {
     background-color: #fff;
     display: flex;
@@ -62,49 +62,52 @@
     }
    
   }
-  .san{
-        background-color: #000;
-        width: 0.2rem;
-        height: 0.2rem;
-        position: absolute;
-        top:1.22rem;
-        right: 0.35rem;
-        transition: all;
-        transform: rotateZ(45deg);
-        -webkit-transition: all;
-        -webkit-transform: rotate(45deg);
-
-    }
-  .menu {
-    
-    background-color: #000;
-    width: 2.5rem;
-    height: 4rem;
-    position: absolute;
-    top: 1.3rem;
-    right: 0.3rem;
-    color: white;
-    border-radius: 2%;
-    ul{
-        li{
-            text-align: left;
-            margin-left: 0.2rem;
-            width:2.5rem;
-            margin-top: 0.1rem;
-            margin-bottom: 0.1rem;
-            span.text{
-                margin-left: 0.3rem;
-                display: inline-block;
-                border-bottom: gray 1px solid;
-                width: 1.69rem;
-            }
-            &:last-child{
-                span{
-                    border: none;
-                }
-            }
-        }
-    }
+  .all{
+  	position: relative;
+	
+  	.san{
+  	      background-color: #000;
+  	      width: 0.2rem;
+  	      height: 0.2rem;
+  	      transition: all;
+  	      transform: rotateZ(45deg);
+  	      -webkit-transition: all;
+  	      -webkit-transform: rotate(45deg);
+		  position: absolute;
+		  right:0.38rem;
+		  top:1.09rem;
+  	  }
+  	.menu {
+  	  z-index: 999;
+  	  background-color: #000;
+  	  width: 2.5rem;
+  	  height: 4rem;
+  	  color: white;
+  	  border-radius: 2%;
+	  position: absolute;
+	  right:0.3rem;
+	  top:1.2rem;
+  	  ul{
+  	      li{
+  	          text-align: left;
+  	          margin-left: 0.2rem;
+  	          width:2.5rem;
+  	          margin-top: 0.1rem;
+  	          margin-bottom: 0.1rem;
+  	          span.text{
+  	              margin-left: 0.3rem;
+  	              display: inline-block;
+  	              border-bottom: gray 1px solid;
+  	              width: 1.69rem;
+  	          }
+  	          &:last-child{
+  	              span{
+  	                  border: none;
+  	              }
+  	          }
+  	      }
+  	  }
+  	}
   }
 
   .mask {
@@ -156,7 +159,10 @@ export default {
       },
       mask:function(){
           this.flag = false;
-      }
+      },
+	  back:function(){
+		  this.$router.push('/')
+	  }
 
   }
 };

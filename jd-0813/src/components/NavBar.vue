@@ -27,6 +27,7 @@
     img {
         width: 0.46rem;
         height: 0.46rem;
+		margin-left: 0.1rem;
     }
     p{
         font-size: 0.2rem;
@@ -77,7 +78,7 @@ export default {
           url: require("../assets/images/登录.png"),
           active: require("../assets/images/登录hover.png"),
           path: "/denglu",
-          text:"登录"
+          text:"未登录"
         }
       ]
     };

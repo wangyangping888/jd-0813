@@ -1,7 +1,7 @@
 <template>
-  <div class="sukbar">
+  <div class="sukbar" >
     <transition name="fade">
-      <div class="suk" v-show="isLogin">
+      <div class="suk" v-show="dian">
         <div class="box">
           <div class="amy">
             <img src="../assets/images/amy.png" />
@@ -40,7 +40,7 @@
         </div>
       </div>
     </transition>
-    <div class="masks" v-show="pan" @click="$emit('input',false)"></div>
+    <div class="masks" v-show="dian" @click="$emit('input',false)"></div>
   </div>
 </template>
 <style lang="less">
@@ -217,14 +217,13 @@
 export default {
   data() {
     return {
-      pan: true,
+      dian: false,
       color: ["金色音乐款", "棕色音乐款"],
       colorindex: 0,
       number:1,
       flag:false,
     };
   },
-  props: ['isLog'],
   props: {
     value: {
       type: Boolean,
@@ -232,24 +231,20 @@ export default {
     }
   },
   computed: {   
-    isLogin () {
-      if(this.isLog == 'true'){
-        return true
-      } else {
-        return false
-      }
-    }
+    
   },
   watch: {
-    value: function(val) {
-      this.pan = this.value;
-      console.log(this.value);
+    value: function(value) {
+      this.dian = value;
     }
   },
   created: function() {
-    this.pan = this.value;
+    this.dian = this.value;
   },
   methods:{
+	  dianji:function(){
+		 this.$emit('input',this.dian) 
+	  }
       
   }
 };
