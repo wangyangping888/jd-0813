@@ -46,6 +46,10 @@
     input{
         border: none;
         margin: 0rem;
+        width:3.5rem;
+        &:focus{
+          outline: none;
+        }
     }
   }
   .catc {

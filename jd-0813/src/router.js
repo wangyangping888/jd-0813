@@ -7,6 +7,8 @@ import gouwu from './views/gouwu.vue'
 import denglu from './views/denglu.vue'
 import product from './views/product.vue'
 import login from './views/login.vue'
+import searchResult from './views/searchResult.vue'
+
 
 
 
@@ -51,6 +53,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
-    }
+    },
+    {
+      path: '/searchResult',
+      name: 'searchResult',
+      component: searchResult
+    },
   ]
 })
